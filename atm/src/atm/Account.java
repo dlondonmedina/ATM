@@ -21,7 +21,7 @@ public class Account {
 	/*
 	 * The list of transactions.
 	 */
-	private ArrayList<Transaction> transactions;
+	private ArrayList<AcctTransaction> acctTransactions;
 	
 	/**
 	 * Create a new account.
@@ -39,7 +39,7 @@ public class Account {
 		this.uuid = theBank.getNewAccountUUID();
 		
 		// initialize transactions
-		this.transactions = new ArrayList<Transaction>();
+		this.acctTransactions = new ArrayList<AcctTransaction>();
 		
 	}
 
@@ -76,7 +76,7 @@ public class Account {
 	public double getBalance() {
 		// TODO: When we attach database change this to not run calculations each time.
 		double balance = 0;
-		for (Transaction t : this.transactions) {
+		for (AcctTransaction t : this.acctTransactions) {
 			balance += t.getAmount();
 		}
 		
@@ -89,8 +89,8 @@ public class Account {
 	public void printTransHistory() {
 		
 		System.out.printf("\nTransaction history for account %s\n", this.uuid);
-		for (int t = this.transactions.size() - 1; t >= 0; t--) {
-			System.out.printf(this.transactions.get(t).getSummaryLine());
+		for (int t = this.acctTransactions.size() - 1; t >= 0; t--) {
+			System.out.printf(this.acctTransactions.get(t).getSummaryLine());
 		}
 		System.out.println();
 		
@@ -105,8 +105,8 @@ public class Account {
 	public void addTransaction(double amount, String memo) {
 
 		// create new transaction object.
-		Transaction newTrans = new Transaction(amount, this, memo);
-		this.transactions.add(newTrans);
+		AcctTransaction newTrans = new AcctTransaction(amount, this, memo);
+		this.acctTransactions.add(newTrans);
 		
 	}
 }

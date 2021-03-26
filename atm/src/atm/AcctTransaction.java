@@ -2,7 +2,7 @@ package atm;
 
 import java.util.Date;
 
-public class Transaction {
+public class AcctTransaction {
 	
 	/*
 	 * Transaction amount.
@@ -29,7 +29,7 @@ public class Transaction {
 	 * @param amount		the amount transacted.
 	 * @param inAccount		the account the transaction belongs to.
 	 */
-	public Transaction(double amount, Account inAccount) {
+	public AcctTransaction(double amount, Account inAccount) {
 		this.amount = amount;
 		this.inAccount = inAccount;
 		this.timestamp = new Date();
@@ -42,7 +42,7 @@ public class Transaction {
 	 * @param inAccount		the account the transaction belongs to.
 	 * @param memo 			the memo for the transaction.
 	 */
-	public Transaction(double amount, Account inAccount, String memo) {
+	public AcctTransaction(double amount, Account inAccount, String memo) {
 		// call the two arg constructor first
 		this(amount, inAccount);
 		

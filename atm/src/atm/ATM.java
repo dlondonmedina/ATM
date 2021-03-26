@@ -7,10 +7,17 @@ public class ATM {
 	public static void main(String[] args) {
 		
 		// init Scanner
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);		
 		
-		// init Bank 
-		Bank theBank = new Bank("Bruno's Bank of Banks.");
+		// init Database 
+		Database db = new Database();
+		
+		Bank theBank = db.addBank("Bruno's Bank");
+		
+//		// init Bank 
+//		Bank theBank = new Bank("Bruno's Bank of Banks.");
+		
+		// Load accounts from database
 		
 		// add a user
 		User aUser = theBank.addUser("John", "Doe", "1234");

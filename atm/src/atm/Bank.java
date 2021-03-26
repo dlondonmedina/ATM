@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Bank {
-
+	
+	private int id;
 	private String name;
 	private ArrayList<User> users;
 	private ArrayList<Account> accounts;
 	
+	public Bank() {}
 	
 	public Bank(String name) {
 		
@@ -16,6 +18,34 @@ public class Bank {
 		this.name = name;
 		this.users = new ArrayList<User>();
 		this.accounts = new ArrayList<Account>();
+	}
+	
+	/**
+	 * Getter to retrieve id
+	 * @return	the id
+	 */
+	public int getid() {
+		return this.id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	/**
+	 * Get the bank name
+	 * @return	the name
+	 */
+	public String getName() {
+
+		return this.name;
+	}
+	
+	/**
+	 * Reset bank name
+	 * @param name 	new name for bank
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	/**
@@ -130,8 +160,4 @@ public class Bank {
 		return null;
 	}
 
-	public String getName() {
-
-		return this.name;
-	}
 }
